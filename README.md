@@ -1,6 +1,6 @@
-# Basic Computer Assembler project in CSE311 Computer Organization
+# Basic Computer Assembler project in CSE311 Computer Organization course
 
-In this project, I build a simple assembler for the Basic Computer Instruction Set Architecture as per M.Mano's book "Computer System Architecture".
+In this project, I built a simple assembler for the Basic Computer Instruction Set Architecture as per M.Mano's book "Computer System Architecture".
 
 The Basic Computer has a 16-bit instruction divided into 12-bit address, 3-bit opcode and 1-bit for addressing mode.
 
