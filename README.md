@@ -1,8 +1,6 @@
-# Project 2 : Basic Computer Assembler
+# Basic Computer Assembler project in CSE311 Computer Organization
 
-Welcome to Project 2 of CSE311 Computer Organization!
-
-In this project, you will be building a very simple assembler for the Basic Computer Instruction Set Architecture as per M.Mano's book "Computer System Architecture" [1].
+In this project, I build a simple assembler for the Basic Computer Instruction Set Architecture as per M.Mano's book "Computer System Architecture".
 
 The Basic Computer has a 16-bit instruction divided into 12-bit address, 3-bit opcode and 1-bit for addressing mode.
 
@@ -11,9 +9,9 @@ The Basic Computer's ISA supports 25 instructions categorized as following:
 * Register-Reference Instructions (RRI) : 12 instructions
 * Input-Output Instructions (IOI) : 6 instructions
 
-The detailed instructions and their corresponding binary representations are saved in three files `mri.txt` for memory-reference instructions, `rri.txt` for register-reference instructions and finally `ioi.txt` for input-output instructions. Each file contains the instructions each in a separate line, and each line has the instruction and its representation separated by a space. No empty lines are allowed in this file (however, this case is not programmed to raise any errors in the implemented code, yet). The Instruction Set supported by this assembler can be changed by modifying the three mentioned files.
+The detailed instructions and their corresponding binary representations are saved in three files `mri.txt` for memory-reference instructions, `rri.txt` for register-reference instructions and finally `ioi.txt` for input-output instructions. Each file contains the instructions each in a separate line, and each line has the instruction and its representation separated by a space. The Instruction Set supported by this assembler can be changed by modifying the three mentioned files.
 
-However, there are only 4 pseudo-instructions supported by this assembler: `ORG`, `END`, `HEX` and `DEC`. These instructions do not have a direct binary mapping, but are instructions to the assembler to behave in a certain way during the first and second passes. **Your implementation of the first and second pass of this project should consider only these four pseudo-instructions**.
+However, there are only 4 pseudo-instructions supported by this assembler: `ORG`, `END`, `HEX` and `DEC`. These instructions do not have a direct binary mapping, but are instructions to the assembler to behave in a certain way during the first and second passes. So the implementation of the first and second pass of this project considers only these four pseudo-instructions.
 
 ## Assembly Language Rules
 
@@ -41,28 +39,14 @@ The assembly code supported by this simple assembler must stick to some basic ru
 * Similar to the last point, labels created using the `HEX` pseudo instruction should also be without any special characters and should directly write the hexadecimal digits i.e. `AC41`.
 
 
-You should see an example at `testcode.asm` and `testcode.mc` for the assembly code and the assembled binary machine code, respectively. In the output file, the first column corresponds to the memory location (12 bits), and the second column corresponds to the translated binary representation of the instructions (16 bits).
+You can see an example at `testcode.asm` and `testcode.mc` for the assembly code and the assembled binary machine code, respectively. In the output file, the first column corresponds to the memory location (12 bits), and the second column corresponds to the translated binary representation of the instructions (16 bits).
 
 ## assembler.py
 
-The class `Assembler` has 6 methods already implemented for you. It has 7 data structures to save the input assembly code, address symbol table, the instruction set tables and other important information necessary for the assembly. Please read the code carefully before attempting to make any modifications, understand the purpose of every property and method first.
+The class `Assembler` has 6 methods already implemented for you. It has 7 data structures to save the input assembly code, address symbol table, the instruction set tables and other important information necessary for the assembly.
 
 After the second pass, the private property `__bin` (of type dict) should have the binary representation of every assembly instructions as values and their location in memory as keys. The public method `assemble()` returns that object after completing the second pass so that it can be used to store the binary output in a file or send it to the standard output.
 
-
-
-## Your task
-
-Your task in this project is to write the code of the `__first_pass(self)` and `__second_pass(self)` methods of the `Assembler` class. The flowchart of the first pass and second pass can be found in Mano's book[1]. You should use the implemented methods when needed or write your own methods to complete this task. You must stick to the language rules and to explained output format (dictionary `__bin`).
-
-Please make sure that you translate all instructions and locations into binary format, and that all binary locations (or addresses) are 12-bit and all binary instructions are 16-bit. If a binary number's length is less than 12 or 16, it must be left-padded with zeros. Moreover, notice that the keys and values at `__bin` are binary numbers of type string i.e. `'00111010011'` not actual integers.
-
-Once your implement the two functions correctly, run `testscript.py` and you should see the following:
-```
-Assembling...
-TEST PASSED
-```
-If your implementation has an issue, you should see `TEST FAILED` instead.
 
 ## Appendix
 
@@ -117,7 +101,3 @@ There are four more instructions that can appear in the assembly code which does
 
 ## References
 [1] M. Mano, “Computer System Architecture,” Pearson Publisher, 3rd Edition, 1992.
-
-## Credits
-
-This project was created by Mostafa Soliman and Osama Adel, 12 Decemeber 2020.
