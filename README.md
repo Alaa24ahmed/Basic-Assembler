@@ -1,6 +1,6 @@
 # Basic Computer Assembler project in CSE311 Computer Organization course
 
-In this project, I built a simple assembler for the Basic Computer Instruction Set Architecture as per M.Mano's book "Computer System Architecture".
+In this project, I built a simple assembler for the basic computer instruction set architecture as per M.Mano's book "Computer System Architecture". It still needs some modifications.
 
 The Basic Computer has a 16-bit instruction divided into 12-bit address, 3-bit opcode and 1-bit for addressing mode.
 
@@ -43,7 +43,7 @@ You can see an example at `testcode.asm` and `testcode.mc` for the assembly code
 
 ## assembler.py
 
-The class `Assembler` has 6 methods already implemented for you. It has 7 data structures to save the input assembly code, address symbol table, the instruction set tables and other important information necessary for the assembly.
+The class `Assembler` has 7 data structures to save the input assembly code, address symbol table, the instruction set tables and other important information necessary for the assembly.
 
 After the second pass, the private property `__bin` (of type dict) should have the binary representation of every assembly instructions as values and their location in memory as keys. The public method `assemble()` returns that object after completing the second pass so that it can be used to store the binary output in a file or send it to the standard output.
 
